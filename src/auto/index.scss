@@ -1,0 +1,121 @@
+.index_ahome {
+    background: #f6f7f9;
+    box-sizing: border-box;
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    overflow: auto;
+    padding: 15px 20px;
+    .nowrap{
+      white-space: nowrap;
+    }
+    // .mb_22{
+    //   margin-bottom: 22px;
+    // }
+    .pbottom{
+      height: 120px;
+      padding: 10px 0;
+      box-sizing: border-box;
+      display: flex;
+      justify-content: space-around;
+      .pbottom_son{
+        height: 100%;
+        border-right: 1px solid #DDD;
+        flex: 1;
+        padding-left: 80px;
+        .mt_29{
+          margin-top: 19px;
+          margin-bottom: 10px;
+          font-size: 16px;
+          color: #666666;
+        }
+        .look_tx{
+          font-size: 16px;
+          color: #409EFF;
+          margin-left: 118px;
+        }
+        .big_num{
+          font-size: 36px;
+          color: #333333;
+          width: 80px;
+          height: 50px;
+          line-height: 50px;
+          display: inline-block;
+          font-weight: lighter;
+        }
+      }
+      .noborder{
+      border: none;
+    }
+    }
+    .ptitle{
+      height: 50px;
+      line-height: 50px;
+      border-bottom: 1px solid  #DDDDDD;
+      margin-top: 20px;
+      font-size: 18px;
+      img,span{vertical-align: middle;}
+      span{margin-left: 20px;font-weight: bold;}
+      img{
+        width: 24px;
+        height: 24px;
+      }
+    }
+    .project_content{
+      height: 200px;
+      padding-left:40px;
+      padding-right:50px;
+      padding-top: 20px;
+      box-sizing: border-box;
+      display: flex;
+      justify-content: space-between;
+      .pc_box{
+        width: 440px;
+        height: 160px;
+        background: #FAFAFA;
+        border: 1px solid #DDDDDD;
+         box-sizing: border-box;
+         padding-left: 40px;
+         padding-top: 20px;
+         .pc_box_title{
+           font-size: 18px;
+           color: #333333;
+         }
+         .pc_box_mid{
+           text-align: center;
+           font-size: 36px;
+             color: #333333;
+             img{
+               width: 50px;
+               height: 50px;
+               margin-right: 30px;
+             }
+             span,img{vertical-align: bottom;}
+             span{
+               display: inline-block;
+               height: 50px;
+               line-height: 50px;
+             }
+         }
+         .pc_box_bottom{
+           font-size: 16px;
+  color: #666666;
+  margin-top: 30px;
+         }
+      }
+    }
+    .pl_40{
+      padding-left: 40px;
+    }
+    .bg_w{
+      background: #FFFFFF;
+    }
+    .m_title{
+      height: 40px;
+      line-height: 40px;
+      font-size: 20px;
+      color: #333333;
+    }
+  }
