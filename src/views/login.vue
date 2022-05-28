@@ -38,6 +38,10 @@
         </div>
       </el-form-item>
       <el-checkbox v-model="loginForm.rememberMe" style="margin:0px 0px 25px 0px;">记住密码</el-checkbox> -->
+       <el-form-item style="width:100%;color:rgb(163 161 161);">
+        <span>用户名：admin</span>&nbsp;
+        <span>密码：admin123</span>
+       </el-form-item>
       <el-form-item style="width:100%;">
         <el-button
           :loading="loading"
@@ -59,7 +63,6 @@
 </template>
 
 <script>
-import { getCodeImg } from "@/api/login";
 import Cookies from "js-cookie";
 import { encrypt, decrypt } from '@/utils/jsencrypt'
 
@@ -100,30 +103,7 @@ export default {
       immediate: true
     }
   },
-  created() {
-    this.getCode();
-    this.getCookie();
-  },
   methods: {
-    getCode() {
-      getCodeImg().then(res => {
-        this.captchaOnOff = res.captchaOnOff === undefined ? true : res.captchaOnOff;
-        if (this.captchaOnOff) {
-          this.codeUrl = "data:image/gif;base64," + res.img;
-          this.loginForm.uuid = res.uuid;
-        }
-      });
-    },
-    getCookie() {
-      const username = Cookies.get("username");
-      const password = Cookies.get("password");
-      const rememberMe = Cookies.get('rememberMe')
-      this.loginForm = {
-        username: username === undefined ? this.loginForm.username : username,
-        password: password === undefined ? this.loginForm.password : decrypt(password),
-        rememberMe: rememberMe === undefined ? false : Boolean(rememberMe)
-      };
-    },
     handleLogin() {
       this.$refs.loginForm.validate(valid => {
         if (valid) {
@@ -141,9 +121,6 @@ export default {
             this.$router.push({ path:"/index" }).catch(()=>{});
           }).catch(() => {
             this.loading = false;
-            if (this.captchaOnOff) {
-              this.getCode();
-            }
           });
         }
       });

@@ -64,7 +64,7 @@
 </template>
 
 <script>
-import { getCodeImg, register } from "@/api/login";
+import { register } from "@/api/login";
 
 export default {
   name: "Register",
@@ -104,19 +104,7 @@ export default {
       captchaOnOff: true
     };
   },
-  created() {
-    this.getCode();
-  },
   methods: {
-    getCode() {
-      getCodeImg().then(res => {
-        this.captchaOnOff = res.captchaOnOff === undefined ? true : res.captchaOnOff;
-        if (this.captchaOnOff) {
-          this.codeUrl = "data:image/gif;base64," + res.img;
-          this.registerForm.uuid = res.uuid;
-        }
-      });
-    },
     handleRegister() {
       this.$refs.registerForm.validate(valid => {
         if (valid) {

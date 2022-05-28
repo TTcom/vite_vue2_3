@@ -8,17 +8,23 @@ const apis= [
   {
     url: '/mock/login',
     method: 'post',
-    response:() => {
-      return {
+    response:(req) => {
+      if(req.body.username=="admin" && req.body.password=="admin123" ){
+          return {
         code: 200,
         message: 'ok',
         data: {
           userId: '0',
-          userName: 'Soybean',
-          userPhone: '15170283876',
           userRole: 'super',
         },
       };
+      }else{
+        return {
+          code: 500,
+          message: 'error',
+          msg:"用户名或密码错误"
+        };
+      }
     },
   },
   {
