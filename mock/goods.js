@@ -32,14 +32,14 @@ const apis= [
           "data":[{
             "type": "0",
             "countId": "be6efe71748349e58d6935372a7d3cd5",
-            "countName": "先锋",
+            "countName": "孙悟空",
             "countNum": 2,
-            "totalCount": 39,
+            "totalCount": 1,
             "banZuList": [
                 {
                     "type": "1",
                     "countId": "5a9f15ce09994812b27fcf7f8167b33a",
-                    "countName": "测试",
+                    "countName": "人脸",
                     "countNum": 2,
                     "totalCount": null,
                     "banZuList": null,
@@ -51,7 +51,7 @@ const apis= [
                 {
                     "type": "2",
                     "countId": "e253d5c310d540c6832f55cc196267d5",
-                    "countName": "测试单位",
+                    "countName": "2022-5-31",
                     "countNum": 2,
                     "totalCount": null,
                     "banZuList": null,

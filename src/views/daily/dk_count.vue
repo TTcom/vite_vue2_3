@@ -37,36 +37,33 @@
       </el-form-item>
     </el-form>
     <el-tabs stretch v-model="queryParams.type" @tab-click="tabClick">
-    <el-tab-pane label="工种统计" name="1">
+    <el-tab-pane label="统计" name="1">
       <div style="text-align: center;margin: 15px 0;">
        <span v-if="dateRange && dateRange.length">{{dateRange[0]}}~~{{dateRange[1]}}</span>
        <span style="margin-left: 30px;" v-show="selectProjectName">项目：{{selectProjectName}}</span>
       </div>
       <div style="text-align: center;padding-bottom: 10px;border-bottom: 2px solid #dfe4ed;;margin-bottom: 15px;">
-       工种考勤人数统计(累计用工{{totalCount + ""}}人·天)
+       考勤人数统计({{totalCount + ""}}人·天)
       </div>
       <el-table v-loading="loading" border :data="list">
-      <el-table-column label="工种" prop="" align="center" >
+      <el-table-column label="姓名" prop="" align="center" >
         <template  slot-scope="{row}">
           <span class="cur_span" @click="toDkIndex({GzId:row.countId})">
         <span>{{row.countName}}</span>
-        <span v-if="row.countNum">({{row.countNum}})</span>
         </span>
       </template>
     </el-table-column>
-      <el-table-column label="班组明细" prop="" align="center" >
+      <el-table-column label="打卡类型" prop="" align="center" >
          <template slot-scope="{row}" v-if="row.banZuList && row.banZuList.length">
          <span class="cur_span" v-for="(item,i) in row.banZuList" :key="i" @click="toDkIndex({BzId:item.countId,GzId:row.countId})">
             <span>{{item.countName}}</span>
-            <span v-if="item.countNum">({{item.countNum}})；</span>
          </span>
       </template>
     </el-table-column>
-      <el-table-column label="承建单位明细" prop="" align="center" >
+      <el-table-column label="打卡时间" prop="" align="center" >
          <template slot-scope="{row}" v-if="row.cjsList && row.cjsList.length">
          <span class="cur_span" v-for="(item,i) in row.cjsList" :key="i" @click="toDkIndex({CjDwId:item.countId,GzId:row.countId})">
             <span>{{item.countName}}</span>
-            <span v-if="item.countNum">({{item.countNum}})；</span>
          </span>
       </template>
     </el-table-column>
